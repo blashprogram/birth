@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ছোট সারপ্রাইজ</title>
+    <title>ছোট সারপ্রাইজ - প্রশ্নোত্তর</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -26,7 +26,7 @@
 
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -35,7 +35,7 @@
 
         #box {
             width: 100%;
-            max-width: 700px;
+            max-width: 800px;
             padding: 50px 40px;
             background: rgba(25, 25, 40, 0.85);
             border-radius: 24px;
@@ -88,8 +88,8 @@
         #text {
             font-size: 24px;
             line-height: 1.7;
-            margin: 40px 0;
-            min-height: 140px;
+            margin: 30px 0;
+            min-height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -99,6 +99,60 @@
             border-radius: 16px;
             border-left: 4px solid #4d96ff;
             border-right: 4px solid #ff6b6b;
+        }
+
+        .answer-container {
+            width: 100%;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 2px solid rgba(77, 150, 255, 0.3);
+            animation: answerAppear 0.8s ease-out;
+        }
+
+        .answer-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #4d96ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #answerInput {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 80px;
+            max-height: 150px;
+        }
+
+        #answerInput:focus {
+            outline: none;
+            border-color: #6bcf7f;
+            box-shadow: 0 0 0 4px rgba(107, 207, 127, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        #answerInput::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .answer-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #aaa;
+            text-align: left;
+            padding-left: 5px;
         }
 
         .buttons-container {
@@ -182,6 +236,26 @@
         .back-btn:hover {
             background: linear-gradient(135deg, #2980b9, #1c6ea4);
             box-shadow: 0 15px 30px rgba(52, 152, 219, 0.4);
+        }
+
+        .skip-btn {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+        }
+
+        .skip-btn:hover {
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+            box-shadow: 0 15px 30px rgba(155, 89, 182, 0.4);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            box-shadow: 0 15px 30px rgba(243, 156, 18, 0.4);
         }
 
         input, textarea {
@@ -309,6 +383,47 @@
             gap: 8px;
         }
 
+        .answers-summary {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(107, 207, 127, 0.3);
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .answers-summary h3 {
+            color: #6bcf7f;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .answer-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .question-text {
+            color: #4d96ff;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .answer-text {
+            color: #ffd93d;
+            padding-left: 15px;
+        }
+
+        .empty-answer {
+            color: #aaa;
+            font-style: italic;
+        }
+
         /* Animations */
         @keyframes boxAppear {
             0% {
@@ -325,6 +440,17 @@
             0% {
                 opacity: 0;
                 transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes answerAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
             }
             100% {
                 opacity: 1;
@@ -418,6 +544,17 @@
                 padding: 15px;
             }
             
+            .answer-container {
+                padding: 15px;
+                margin: 20px 0;
+            }
+            
+            #answerInput {
+                padding: 16px 20px;
+                font-size: 16px;
+                min-height: 70px;
+            }
+            
             button {
                 padding: 16px 24px;
                 font-size: 17px;
@@ -449,6 +586,11 @@
             .birthday-image {
                 margin: 20px 0;
                 max-height: 350px;
+            }
+            
+            .answers-summary {
+                padding: 20px;
+                max-height: 250px;
             }
         }
 
@@ -495,6 +637,10 @@
             .birthday-image {
                 max-height: 300px;
             }
+            
+            .answer-title {
+                font-size: 16px;
+            }
         }
 
         @media only screen and (max-width: 400px) {
@@ -521,6 +667,12 @@
             .birthday-image {
                 max-height: 250px;
             }
+            
+            #answerInput {
+                padding: 14px 18px;
+                font-size: 16px;
+                min-height: 60px;
+            }
         }
     </style>
 </head>
@@ -536,7 +688,7 @@
         <div id="box">
             <div class="step-indicator" id="stepIndicator">STEP 1</div>
             <h1 class="title">🎂 ছোট সারপ্রাইজ 🎂</h1>
-            <div class="subtitle">আপনার বিশেষ দিনের জন্য বিশেষ অভিজ্ঞতা</div>
+            <div class="subtitle">প্রতিটি প্রশ্নের উত্তর দিন এবং শেষে সব উত্তর ডাউনলোড করুন</div>
             
             <div id="text" class="fade-in"></div>
             <div id="buttons" class="buttons-container"></div>
@@ -545,6 +697,7 @@
 
     <script>
         let s = 0;
+        let userAnswers = []; // সব উত্তর সংরক্ষণের জন্য
         let steps = [
             "STEP 1:  আপনি কি সত্যিই এইটা দেখতে এসেছেন? 😏",
             "STEP 2: যদি এসেই থাকেন তাহলে আর পিছনে যাওয়া নেই 😌",
@@ -668,7 +821,20 @@
             }
         }
 
-        // Show current step
+        // বর্তমান ধাপের উত্তর সংরক্ষণ
+        function saveCurrentAnswer() {
+            const answerInput = document.getElementById('answerInput');
+            if (answerInput) {
+                const answer = answerInput.value.trim();
+                // এই ধাপের জন্য উত্তর সংরক্ষণ বা আপডেট
+                userAnswers[s] = {
+                    question: steps[s],
+                    answer: answer || "(কোন উত্তর দেওয়া হয়নি)"
+                };
+            }
+        }
+
+        // Show current step with answer box
         function showStep() {
             if (s >= steps.length) {
                 passwordScreen();
@@ -677,36 +843,44 @@
 
             updateStepIndicator();
             
+            // যদি আগের উত্তর থেকে থাকে, সেটি দেখাও
+            const previousAnswer = userAnswers[s] ? userAnswers[s].answer : "";
+            
             // Create button elements with icons
             box.innerHTML = `
                 <div class="step-indicator" id="stepIndicator">STEP ${s+1}</div>
                 <h1 class="title">🎂 ছোট সারপ্রাইজ 🎂</h1>
-                <div class="subtitle">আপনার বিশেষ দিনের জন্য বিশেষ অভিজ্ঞতা</div>
+                <div class="subtitle">প্রতিটি প্রশ্নের উত্তর দিন এবং শেষে সব উত্তর ডাউনলোড করুন</div>
                 
                 <div id="text" class="fade-in">${steps[s]}</div>
                 
+                <div class="answer-container">
+                    <div class="answer-title">
+                        <i class="fas fa-edit"></i> আপনার উত্তর দিন:
+                    </div>
+                    <textarea 
+                        id="answerInput" 
+                        placeholder="এখানে আপনার উত্তর লিখুন... (যেমন: হ্যাঁ, না, আমার মতে...)" 
+                        autocomplete="off"
+                        autofocus>${previousAnswer}</textarea>
+                    <div class="answer-info">
+                        <i class="fas fa-info-circle"></i> উত্তর দিলে Next বাটনে ক্লিক করুন
+                    </div>
+                </div>
+                
                 <div id="buttons" class="buttons-container">
-                    <button class="agree" onclick="nextStep()">
-                        <i class="fas fa-check-circle"></i> একমত
+                    <button class="agree" onclick="saveAndNext()">
+                        <i class="fas fa-arrow-right"></i> Next
                     </button>
-                    <button class="agree" onclick="nextStep()">
-                        <i class="fas fa-thumbs-up"></i> ওকে
-                    </button>
-                    <button class="agree" onclick="nextStep()">
-                        <i class="fas fa-check"></i> ঠিক
-                    </button>
-                    <button class="agree" onclick="nextStep()">
-                        <i class="fas fa-heart"></i> হ্যা
-                    </button>
-                    <button class="disagree" onclick="disagreeStep()">
-                        <i class="fas fa-times-circle"></i> একমত নই
-                    </button>
-                    <button class="disagree" onclick="disagreeStep()">
-                        <i class="fas fa-ban"></i> না
+                    <button class="skip-btn" onclick="skipAnswer()">
+                        <i class="fas fa-forward"></i> Skip
                     </button>
                     <button class="back-btn" onclick="prevStep()">
                         <i class="fas fa-arrow-left"></i> Back
                     </button>
+                    ${s > 0 ? `<button class="download-btn" onclick="showAnswersSummary()">
+                        <i class="fas fa-eye"></i> দেখুন উত্তর
+                    </button>` : ''}
                 </div>
             `;
             
@@ -717,14 +891,20 @@
                 textElement.style.animation = "textFadeIn 0.8s ease-out";
             }, 10);
             
+            // Focus on answer input
+            setTimeout(() => {
+                document.getElementById('answerInput').focus();
+            }, 100);
+            
             // Add floating emoji effect for some steps
             if (s === 0 || s === 49 || s === 78 || s === 99) {
                 createFloatingEmoji();
             }
         }
 
-        // Normal next
-        function nextStep() {
+        // Save answer and go to next step
+        function saveAndNext() {
+            saveCurrentAnswer();
             s++;
             showStep();
             
@@ -734,36 +914,110 @@
             }
         }
 
-        // Previous
+        // Skip this question (save empty answer)
+        function skipAnswer() {
+            userAnswers[s] = {
+                question: steps[s],
+                answer: "(সোজা প্রশ্ন এড়িয়ে গেছেন)"
+            };
+            s++;
+            showStep();
+        }
+
+        // Previous step
         function prevStep() {
             if (s > 0) { 
+                // Save current answer before going back
+                saveCurrentAnswer();
                 s--; 
                 showStep(); 
             }
         }
 
-        // Disagree → shows temporary message, then allow next
-        function disagreeStep() {
+        // Show answers summary
+        function showAnswersSummary() {
+            saveCurrentAnswer();
+            
+            // Filter out empty answers
+            const filledAnswers = userAnswers.filter(answer => answer && answer.answer !== "(কোন উত্তর দেওয়া হয়নি)");
+            
             box.innerHTML = `
-                <div class="step-indicator" id="stepIndicator">STEP ${s+1}</div>
-                <h1 class="title">🎂 ছোট সারপ্রাইজ 🎂</h1>
-                <div class="subtitle">আপনার বিশেষ দিনের জন্য বিশেষ অভিজ্ঞতা</div>
+                <div class="step-indicator" id="stepIndicator" style="background:linear-gradient(135deg, #6bcf7f, #27ae60);">আপনার উত্তরসমূহ</div>
+                <h1 class="title">📝 আপনার দেওয়া উত্তর</h1>
+                <div class="subtitle">মোট ${filledAnswers.length}টি প্রশ্নের উত্তর দিয়েছেন</div>
                 
-                <div id="text" class="fade-in" style="color:#ffd93d; font-size:26px;">
-                    <i class="fas fa-grin-tongue-wink fa-2x"></i><br><br>
-                    Sorry 😅 ...একমত হন বা না হন,<br>আচ্ছা যাইহোক শেষ পর্যন্ত এগোতেই হবে!
+                <div class="answers-summary">
+                    <h3><i class="fas fa-list-check"></i> প্রশ্ন ও উত্তরসমূহ:</h3>
+                    ${filledAnswers.length > 0 ? 
+                        filledAnswers.map((item, index) => `
+                            <div class="answer-item">
+                                <div class="question-text">প্রশ্ন ${steps.indexOf(item.question) + 1}: ${item.question.replace('STEP ' + (steps.indexOf(item.question) + 1) + ': ', '')}</div>
+                                <div class="answer-text">আপনার উত্তর: ${item.answer}</div>
+                            </div>
+                        `).join('') 
+                        : 
+                        '<div class="answer-text empty-answer">আপনি এখনো কোনো প্রশ্নের উত্তর দেননি।</div>'
+                    }
                 </div>
                 
-                <div id="buttons" class="buttons-container">
-                    <button class="agree" onclick="nextStep()" style="min-width: 200px;">
-                        <i class="fas fa-arrow-right"></i> Next
+                <div class="buttons-container">
+                    <button class="download-btn" onclick="downloadAnswers()" style="min-width: 220px;">
+                        <i class="fas fa-download"></i> সব উত্তর ডাউনলোড করুন
+                    </button>
+                    <button class="back-btn" onclick="showStep()" style="min-width: 180px;">
+                        <i class="fas fa-arrow-left"></i> ফিরে যান
+                    </button>
+                    <button class="agree" onclick="saveAndNext()" style="min-width: 180px;">
+                        <i class="fas fa-arrow-right"></i> পরবর্তী প্রশ্ন
                     </button>
                 </div>
             `;
         }
 
+        // Download answers as text file
+        function downloadAnswers() {
+            saveCurrentAnswer();
+            
+            let content = "ছোট সারপ্রাইজ - আপনার উত্তরসমূহ\n";
+            content += "===============================\n\n";
+            content += `ডাউনলোডের তারিখ: ${new Date().toLocaleDateString('bn-BD')}\n`;
+            content += `ডাউনলোডের সময়: ${new Date().toLocaleTimeString('bn-BD')}\n`;
+            content += `মোট প্রশ্ন: ${steps.length}\n`;
+            content += `উত্তর দেওয়া হয়েছে: ${userAnswers.filter(a => a && a.answer && a.answer !== "(কোন উত্তর দেওয়া হয়নি)").length}\n\n`;
+            
+            // Filter and add answers
+            userAnswers.forEach((answer, index) => {
+                if (answer && answer.answer && answer.answer !== "(কোন উত্তর দেওয়া হয়নি)") {
+                    content += `প্রশ্ন ${index + 1}:\n`;
+                    content += `প্রশ্ন: ${answer.question.replace(`STEP ${index + 1}: `, '')}\n`;
+                    content += `উত্তর: ${answer.answer}\n`;
+                    content += "―".repeat(50) + "\n\n";
+                }
+            });
+            
+            content += "\n\n\n";
+            content += "এই প্রশ্নোত্তর তৈরি করেছেন: ছোট সারপ্রাইজ\n";
+            content += "ধন্যবাদ! ❤️";
+            
+            // Create download link
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `ছোট-সারপ্রাইজ-উত্তর-${new Date().getTime()}.txt`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            
+            // Show success message
+            alert("✅ আপনার উত্তরসমূহ ডাউনলোড শুরু হয়েছে! ফাইলটি আপনার Downloads ফোল্ডারে সংরক্ষিত হবে।");
+        }
+
         // Password screen with hints
         function passwordScreen() {
+            saveCurrentAnswer(); // শেষ ধাপের উত্তর সংরক্ষণ
+            
             box.innerHTML = `
                 <div class="step-indicator" id="stepIndicator" style="background:linear-gradient(135deg, #ff6b6b, #ff8e53); color:#fff;">FINAL STEP</div>
                 <h1 class="title">🔐 শেষ ধাপ!</h1>
@@ -778,14 +1032,18 @@
                     </div>
                 </div>
                 
-                
-                
+                <br>
                 <input id='pass' type='text' placeholder='এখানে Password লিখুন ' autocomplete="off" autofocus>
                 <br><br>
                 
-                <button class="agree" onclick='checkPass()' style="width: 220px; margin: 0 auto;">
-                    <i class="fas fa-paper-plane"></i> Submit
-                </button>
+                <div class="buttons-container">
+                    <button class="agree" onclick='checkPass()' style="min-width: 220px;">
+                        <i class="fas fa-paper-plane"></i> Submit
+                    </button>
+                    <button class="download-btn" onclick="downloadAnswers()" style="min-width: 220px;">
+                        <i class="fas fa-download"></i> উত্তর ডাউনলোড করুন
+                    </button>
+                </div>
             `;
             
             // Focus on the input field
@@ -797,7 +1055,7 @@
         // Password check - 2 different images for 2 different passwords
         function checkPass() {
             let p = document.getElementById("pass").value.toLowerCase().trim();
-            const submitBtn = document.querySelector('button');
+            const submitBtn = document.querySelector('button.agree');
             
             // Disable button and show loading
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking...';
@@ -810,7 +1068,7 @@
                     showBirthdayScreen(
                         "img/upama.jpg", 
                         "Upama", 
-                        
+                        "উপমা এর জন্য বিশেষ জন্মদিনের শুভেচ্ছা!"
                     );
                 } 
                 // Second password - shows second image
@@ -818,7 +1076,7 @@
                     showBirthdayScreen(
                         "img/hasnat.jpg", 
                         "Hasnat", 
-                       
+                        "হাসনাত এর জন্য বিশেষ জন্মদিনের শুভেচ্ছা!"
                     );
                 } 
                 // Wrong password
@@ -846,8 +1104,7 @@
                             দয়া করে সঠিক Password দিন।
                         </div>
                         
-                        
-                        
+                        <br>
                         <input id='pass' type='text' placeholder='আবার Password লিখুন' autocomplete="off" autofocus>
                         <br><br>
                         
@@ -857,6 +1114,9 @@
                             </button>
                             <button class="back-btn" onclick='passwordScreen()' style="min-width: 200px;">
                                 <i class="fas fa-info-circle"></i> Password Hint দেখুন
+                            </button>
+                            <button class="download-btn" onclick="downloadAnswers()" style="min-width: 200px;">
+                                <i class="fas fa-download"></i> উত্তর ডাউনলোড
                             </button>
                         </div>
                     `;
@@ -870,12 +1130,12 @@
         }
 
         // Show birthday screen with image
-        function showBirthdayScreen(imageSrc, name, description, gradientColor) {
+        function showBirthdayScreen(imageSrc, name, description) {
             // Create confetti effect
             createConfetti();
             
             box.innerHTML = `
-                <div class="step-indicator" id="stepIndicator" style="background:${gradientColor};">🎉 SPECIAL FOR ${name.toUpperCase()} 🎉</div>
+                <div class="step-indicator" id="stepIndicator" style="background:linear-gradient(135deg, #ff6b6b, #ff8e53);">🎉 SPECIAL FOR ${name.toUpperCase()} 🎉</div>
                 <h1 class="title">জন্মদিনের শুভেচ্ছা! ${name}</h1>
                 <div class="subtitle">${description}</div>
                 
@@ -896,9 +1156,14 @@
                 </div>
                 
                 <br>
-                <button class="agree" onclick="showFinalText('${name}')" style="width: 280px; margin: 0 auto; font-size:20px;">
-                    <i class="fas fa-gift"></i> ${name} এর জন্য বার্তা দেখুন
-                </button>
+                <div class="buttons-container">
+                    <button class="agree" onclick="showFinalText('${name}')" style="min-width: 240px;">
+                        <i class="fas fa-gift"></i> ${name} এর জন্য বার্তা দেখুন
+                    </button>
+                    <button class="download-btn" onclick="downloadAnswers()" style="min-width: 220px;">
+                        <i class="fas fa-download"></i> উত্তর ডাউনলোড করুন
+                    </button>
+                </div>
             `;
             
             // Animate the box
@@ -964,9 +1229,13 @@
                 
                 <br>
                 <div class="buttons-container">
-                    <button class="agree" onclick="location.reload()" style="min-width: 200px;">
+                    <button class="download-btn" onclick="downloadAnswers()" style="min-width: 240px;">
+                        <i class="fas fa-download"></i> সব উত্তর ডাউনলোড করুন
+                    </button>
+                    <button class="agree" onclick="location.reload()" style="min-width: 180px;">
                         <i class="fas fa-redo"></i> আবার শুরু করুন
-                    
+                    </button>
+                </div>
             `;
             
             // Stop the pulsing animation
@@ -1031,10 +1300,21 @@
         
         // Add keyboard navigation
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowRight' || event.key === 'Enter' || event.key === ' ') {
-                nextStep();
-            } else if (event.key === 'ArrowLeft') {
-                prevStep();
+            const answerInput = document.getElementById('answerInput');
+            
+            // যদি উত্তর ইনপুট ফোকাস থাকে, শুধু Enter কাজ করবে
+            if (document.activeElement === answerInput) {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    saveAndNext();
+                }
+            } else {
+                // সাধারণ keyboard navigation
+                if (event.key === 'ArrowRight' || event.key === 'Enter' || event.key === ' ') {
+                    saveAndNext();
+                } else if (event.key === 'ArrowLeft') {
+                    prevStep();
+                }
             }
         });
     </script>
