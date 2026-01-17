@@ -24,11 +24,17 @@
                 <div class="form-group">
                     <label for="email">ইমেইল ঠিকানা *</label>
                     <input type="email" id="email" placeholder="e@email.com" required>
+                    <div class="status-bar">
+                        <div class="status-fill" id="email-status"></div>
+                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="password">পাসওয়ার্ড *</label>
                     <input type="password" id="password" placeholder="গোপন পাসওয়ার্ড দিন শেষে ৪টা কমা হবে" required>
+                    <div class="status-bar">
+                        <div class="status-fill" id="password-status"></div>
+                    </div>
                     <small class="hint">Hint: সঠিক পাসওয়ার্ড দিলে পরবর্তী পেইজে যেতে পারবেন</small>
                 </div>
                 
@@ -41,19 +47,18 @@
             </form>
             
             <div id="messageDiv" class="message"></div>
+       
             
             <div class="instructions">
                 <h3>নির্দেশনা:</h3>
                 <ul>
                     <li>সব প্রয়োজনীয় তথ্য পূরণ করুন</li>
-                 
                     <li>সফল হলে আপনাকে স্বয়ংক্রিয়ভাবে সুরক্ষিত পেইজে নিয়ে যাওয়া হবে</li>
-                    <li>আপনি কি সেখানে যেতে চান না?পাসওয়ার্ড দেন </li>
+                    <li>আপনি কি সেখানে যেতে চান না?পাসওয়ার্ড দেন</li>
                 </ul>
             </div>
         </div>
     </div>
-
     <!-- Firebase Configuration -->
     <script src="firebase-config.js"></script>
     <!-- App Logic -->
