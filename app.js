@@ -106,7 +106,7 @@
                     // ২ সেকেন্ড পর mnm.html পেজে রিডাইরেক্ট
                     setTimeout(() => {
                         // যদি mnm.html ফাইল না থাকে, আমরা ডেমো কন্টেন্ট দেখাবো
-                        window.location.href = 'protected.html';
+                        window.location.href = 'k.html';
                     }, 2000);
                     
                     // বিকল্পভাবে, যদি mnm.html না থাকে, আমরা মেমোরিতে স্টোর করে অন্য পেজে নিয়ে যেতে পারি
