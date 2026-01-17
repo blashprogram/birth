@@ -326,3 +326,351 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+
+
+
+        /* মোবাইল রেস্পন্সিভ স্টাইল */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form-container, .protected-container {
+        padding: 20px 15px;
+        margin-top: 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    input, textarea {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .submit-btn, .logout-btn {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+    
+    .test-buttons {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .test-buttons h4 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .test-button {
+        padding: 6px 12px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .instructions {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .instructions h3 {
+        font-size: 1.1rem;
+    }
+    
+    .instructions li {
+        font-size: 0.9rem;
+    }
+    
+    .message {
+        padding: 12px;
+        font-size: 0.9rem;
+        margin: 15px 0;
+    }
+    
+    /* ফন্ট সাইজ সামঞ্জস্য */
+    body {
+        font-size: 15px;
+    }
+    
+    /* স্ট্যাটাস বার সামঞ্জস্য */
+    .status-bar {
+        height: 4px;
+        margin-top: 8px;
+    }
+}
+
+/* ছোট মোবাইলের জন্য অতিরিক্ত স্টাইল */
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .form-container, .protected-container {
+        padding: 15px 12px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    label {
+        font-size: 0.95rem;
+    }
+    
+    .hint {
+        font-size: 0.8rem;
+    }
+    
+    .submit-btn, .logout-btn {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    
+    /* টেস্ট বাটন সারি করি */
+    .test-buttons {
+        text-align: center;
+    }
+    
+    .test-button {
+        display: inline-block;
+        width: calc(50% - 10px);
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+    
+    /* ফর্ম এলিমেন্টের ফোকাস স্টাইল */
+    input:focus, textarea:focus {
+        border-width: 2px;
+    }
+    
+    /* ইনপুট ফিল্ডের সঠিক/ভুল স্টাইল সামঞ্জস্য */
+    input.correct, input.incorrect {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* ট্যাবলেটের জন্য */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+    
+    .form-container, .protected-container {
+        padding: 30px;
+    }
+}
+
+/* মোবাইলে ভিউপোর্ট সামঞ্জস্য */
+@media (max-width: 768px) {
+    body {
+        padding: 15px 10px;
+    }
+}
+
+/* আইফোন এবং ছোট ডিভাইসের জন্য */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .test-button {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+/* ল্যান্ডস্কেপ মোডের জন্য */
+@media (max-height: 600px) and (orientation: landscape) {
+    .form-container {
+        padding: 15px;
+        margin-top: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .instructions {
+        margin-top: 15px;
+        padding: 12px;
+    }
+}
+
+/* টাচ ডিভাইসের জন্য বাটন স্পেসিং */
+@media (hover: none) and (pointer: coarse) {
+    .submit-btn, .logout-btn, .test-button {
+        min-height: 44px; /* টাচের জন্য ন্যূনতম উচ্চতা */
+    }
+    
+    input, textarea {
+        min-height: 44px; /* টাচের জন্য ন্যূনতম উচ্চতা */
+    }
+}
+
+
+/* এখানে নতুন মোবাইল রেস্পন্সিভ স্টাইল যোগ করুন */
+/* মোবাইল রেস্পন্সিভ স্টাইল */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form-container, .protected-container {
+        padding: 20px 15px;
+        margin-top: 15px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    input, textarea {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .submit-btn, .logout-btn {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+    
+    .test-buttons {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .test-buttons h4 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .test-button {
+        padding: 6px 12px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .instructions {
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    .instructions h3 {
+        font-size: 1.1rem;
+    }
+    
+    .instructions li {
+        font-size: 0.9rem;
+    }
+    
+    .message {
+        padding: 12px;
+        font-size: 0.9rem;
+        margin: 15px 0;
+    }
+    
+    /* ফন্ট সাইজ সামঞ্জস্য */
+    body {
+        font-size: 15px;
+    }
+    
+    /* স্ট্যাটাস বার সামঞ্জস্য */
+    .status-bar {
+        height: 4px;
+        margin-top: 8px;
+    }
+}
+
+/* ছোট মোবাইলের জন্য অতিরিক্ত স্টাইল */
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .form-container, .protected-container {
+        padding: 15px 12px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    label {
+        font-size: 0.95rem;
+    }
+    
+    .hint {
+        font-size: 0.8rem;
+    }
+    
+    .submit-btn, .logout-btn {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    
+    /* টেস্ট বাটন সারি করি */
+    .test-buttons {
+        text-align: center;
+    }
+    
+    .test-button {
+        display: inline-block;
+        width: calc(50% - 10px);
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+    
+    /* ফর্ম এলিমেন্টের ফোকাস স্টাইল */
+    input:focus, textarea:focus {
+        border-width: 2px;
+    }
+    
+    /* ইনপুট ফিল্ডের সঠিক/ভুল স্টাইল সামঞ্জস্য */
+    input.correct, input.incorrect {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+}
